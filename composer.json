@@ -12,6 +12,7 @@
             "email": "krzefski@heptacom.de"
         }
     ],
+    "description": "Ship custom valet drivers with a command to automatically install them.",
     "autoload": {
         "psr-4": {
             "Heptacom\\ValetDrivers\\": "src/"
