@@ -1,0 +1,29 @@
+{
+    "name": "heptacom/valet-drivers",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jana Schwalm",
+            "email": "schwalm@heptacom.de"
+        },
+        {
+            "name": "Julian Krzefski",
+            "email": "krzefski@heptacom.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Heptacom\\ValetDrivers\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/valet": "^2.8"
+    },
+    "scripts": {
+        "post-update-cmd": "@setup",
+        "post-install-cmd": "@setup",
+        "setup": "echo 'HELLO WORLD'"
+    },
+    "bin": ["bin/heptacom-valet-drivers"]
+}
