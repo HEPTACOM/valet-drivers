@@ -9,7 +9,8 @@ function includeIfExists(string $file): bool
 }
 
 if (!includeIfExists(__DIR__ . '/../vendor/autoload.php') &&
-	!includeIfExists(__DIR__ . '/../../../vendor/autoload.php')) {
+	!includeIfExists(__DIR__ . '/../../../vendor/autoload.php') &&
+	!includeIfExists(__DIR__ . '/../../../../vendor/autoload.php')) {
     echo 'Install dependencies using Composer.' . PHP_EOL;
 
     exit(1);
