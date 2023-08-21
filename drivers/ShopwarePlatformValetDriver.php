@@ -1,16 +1,17 @@
 <?php
 
+namespace Valet\Drivers\Custom;
+
+use Valet\Drivers\Specific\SymfonyValetDriver;
+
 class ShopwarePlatformValetDriver extends SymfonyValetDriver
 {
     /**
      * Determine if the incoming request is for a static file.
      *
-     * @param  string  $sitePath
-     * @param  string  $siteName
-     * @param  string  $uri
      * @return string|false
      */
-    public function isStaticFile($sitePath, $siteName, $uri)
+    public function isStaticFile(string $sitePath, string $siteName, string $uri)
     {
         if (stripos($uri, '/recovery/install/assets/') === 0) {
             $uri = substr($uri, strlen('/recovery/install/assets/'));
@@ -23,13 +24,8 @@ class ShopwarePlatformValetDriver extends SymfonyValetDriver
 
     /**
      * Get the fully resolved path to the application's front controller.
-     *
-     * @param  string  $sitePath
-     * @param  string  $siteName
-     * @param  string  $uri
-     * @return string
      */
-    public function frontControllerPath($sitePath, $siteName, $uri)
+    public function frontControllerPath(string $sitePath, string $siteName, string $uri): ?string
     {
         if (stripos($uri, '/recovery/install/index.php') === 0) {
             return $sitePath . '/public/recovery/install/index.php';

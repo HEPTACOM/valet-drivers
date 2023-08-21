@@ -15,16 +15,12 @@
     "description": "Ship custom valet drivers with a command to automatically install them.",
     "autoload": {
         "psr-4": {
-            "Heptacom\\ValetDrivers\\": "src/"
+            "Heptacom\\ValetDrivers\\": "src/",
+            "Valet\\Drivers\\Custom\\": "drivers/"
         }
     },
     "require": {
-        "laravel/valet": "^2.8"
-    },
-    "scripts": {
-        "post-update-cmd": "@setup",
-        "post-install-cmd": "@setup",
-        "setup": "echo 'HELLO WORLD'"
+        "laravel/valet": "^4.0"
     },
     "bin": ["bin/heptacom-valet-drivers"]
 }
